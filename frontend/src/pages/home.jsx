@@ -19,17 +19,26 @@ function Home() {
   .then(data=>{
     console.log(data)
     setdata(data)
+    setloading(false)
   })
   },[])
-  
-
-
-
   return (
     <div>
       <Navbar />
-     
-      
+      { loading && <div>Loading...</div>}
+      <div className="flexthis">
+     {  data &&
+
+        data.map((d)=>(
+          <div className='cards'>
+          <img src={d['house-url'][0]} className='images' />
+
+          </div>
+        ))
+
+
+     }
+      </div>
 
 
       <Footer />

@@ -7,7 +7,7 @@ var cors = require('cors')
 var MongoClient = require('mongodb').MongoClient
 app.use(cors())
 
-
+let queryresult
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err
@@ -31,6 +31,13 @@ MongoClient.connect(url, function(err, db) {
 
 })
 
+dbo.collection('Home').findOne({'resident-id':'102'}, function(err, result) {
+  if (err) throw err
+  console.log(result)
+  queryresult=result
+  
+})
+
 
 
 
@@ -38,9 +45,9 @@ MongoClient.connect(url, function(err, db) {
 })
 
 app.get('/',(req,res)=>{
-
   res.json(obj)
-
-
 })
+
+
+
 app.listen(2000)

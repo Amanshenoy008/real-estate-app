@@ -10,3 +10,21 @@
     gap:3%;
     
 }
+
+.images{
+    width:30px;
+    height: 30px;
+}
+
+.flexthis{
+    display: flex;
+    gap:10%;
+    margin:10px;
+    flex-wrap: wrap;
+}
+
+.cards{
+    border:1px solid red;
+    width:120px;
+    height: 90px;
+}
