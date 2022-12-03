@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    gap:40%;
+    border:1px solid red;
+    padding:20px;
+    background-color: rgb(250, 250, 250);
+    
+}
+li{
+    list-style-type: none;
+}
