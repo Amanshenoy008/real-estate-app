@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import Navbar from '../components/navbar'
 import './page.css'
-import Footer from '../components/footer'
+import {Link} from 'react-router-dom'
 
 
 function Home() {
@@ -23,25 +23,30 @@ function Home() {
   })
   },[])
   return (
-    <div>
+    <div className='home-main'>
       <Navbar />
       { loading && <div>Loading...</div>}
       <div className="flexthis">
      {  data &&
 
         data.map((d)=>(
-          <div className='cards'>
+         <Link to={'/'+d.houseid}> 
+         <div className='cards'>
           <img src={d['house-url'][0]} className='images' />
 
           </div>
+          </Link>
+          
         ))
 
 
      }
       </div>
+     <div className="addhouse">
 
+     </div>
 
-      <Footer />
+      
     </div>
   )
 }

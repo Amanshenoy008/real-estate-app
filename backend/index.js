@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-var demo = require('./routes/demo1.js')
 var url = "mongodb://localhost:27017/"
 var obj = require('./data/datas')
 var cors = require('cors')
@@ -31,7 +30,7 @@ MongoClient.connect(url, function(err, db) {
 
 })
 
-dbo.collection('Home').findOne({'resident-id':'102'}, function(err, result) {
+dbo.collection('Home').findOne({}, function(err, result) {
   if (err) throw err
   console.log(result)
   queryresult=result
@@ -47,6 +46,8 @@ dbo.collection('Home').findOne({'resident-id':'102'}, function(err, result) {
 app.get('/',(req,res)=>{
   res.json(obj)
 })
+
+
 
 
 
